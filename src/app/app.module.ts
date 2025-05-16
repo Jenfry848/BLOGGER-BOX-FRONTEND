@@ -3,16 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {TopBarComponent} from './components/top-bar.component';
+import {provideHttpClient} from '@angular/common/http';
+import { PostService } from './services/post.service';
+import { PostListComponent } from './post-list/post-list.component';
+import { CommonModule } from '@angular/common';
+import { PostListItemComponent } from './components/post-list-item/post-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopBarComponent,
+    PostListComponent,
+    PostListItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(),
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
