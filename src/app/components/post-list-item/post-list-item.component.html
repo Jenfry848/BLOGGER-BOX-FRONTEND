@@ -7,4 +7,9 @@
         </span>
         <span>{{ post.createdDate |date: "medium"}}</span>
     </div>
+
+    <div class="mt-2">
+        <a [routerLink]="['/posts', post.id]" class="btn btn-outline-primary btn-sm">
+        </a>
+    </div>
 </div>

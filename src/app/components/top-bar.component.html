@@ -1,13 +1,28 @@
-
 <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-band" [routerLink]="['/']">
-            <i class="bi bi-postcard"></i> Blogger-Box
-        </a>
-        <form class="d-flex">
-            <button class="btn btn-outline-sucess" type="button">
-                <i class="bi bi-pencil-square"></i> Write
-            </button>
-        </form>
-    </div>
+<div class="container-fluid">
+<a class="navbar-brand" [routerLink]="['/']">
+<i class="bi bi-postcard"></i> Blogger-Box
+</a>
+ 
+<form class="d-flex">
+  <input
+  type="text"
+  [(ngModel)]="keyword"
+  name="keyword"
+  class="form-control me-2"
+  placeholder="Search posts..."
+>
+ 
+<button (click)="search()" class="btn btn-outline-primary" type="button">
+  Search
+</button>
+
+<a routerLink="/add-post" class="btn btn-outline-success" type="button">
+<i class="bi bi-pencil-square"></i> Write
+</a>
+
+</form>
+</div>
 </nav>
+
+ 

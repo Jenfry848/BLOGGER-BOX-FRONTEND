@@ -1,0 +1,17 @@
+<div class="container mt-4">
+<h2>Search Results</h2>
+ 
+  <div *ngIf="posts.length === 0">
+<p>No posts found.</p>
+</div>
+ 
+  <div *ngFor="let post of posts" class="mb-4 border-bottom pb-3">
+<h4>{{ post.title }}</h4>
+<p>{{ post.content }}</p>
+<span class="badge bg-secondary">{{ post.category.name }}</span>
+<br>
+<small>{{ post.createdDate | date:'short' }}</small>
+</div>
+</div>
+
+ 

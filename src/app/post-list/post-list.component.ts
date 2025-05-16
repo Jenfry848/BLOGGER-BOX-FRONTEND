@@ -13,14 +13,11 @@ export class PostListComponent implements OnInit {
 
     constructor(private postService: PostService) { }
 
-    ngOnInit(): void {
-        this.loadPosts();
-    }
-
-    loadPosts(): void {
-        this.postService.getPosts().subscribe(posts => {
-            this.posts =posts;
-        })
-    }
-
+   ngOnInit(): void {
+    this.postService.getAll().subscribe((posts) => {
+      console.log('Posts reçus depuis le backend :', posts); // 🔍 test console
+      this.posts = posts;
+    });
+  }
 }
+

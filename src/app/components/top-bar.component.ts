@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-top-bar',
@@ -6,4 +7,19 @@ import { Component } from "@angular/core";
     standalone: false,
     styleUrl: './top-bar.component.css',
 })
-export class TopBarComponent { }
+export class TopBarComponent { 
+    keyword: string ='';
+
+    constructor (private router: Router){}
+
+    goToAddPost(): void {
+        this.router.navigate(['/add-post']);
+    }
+
+    search(): void {
+        if(this.keyword.trim()) {
+            this.router.navigate(['/search'], {queryParams: {keyword: this.keyword}});
+        }
+    }
+    
+}

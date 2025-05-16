@@ -1,0 +1,22 @@
+<div *ngIf="post">
+<h2>{{ post.title }}</h2>
+<p>{{ post.content }}</p>
+ 
+  <div class="mt-2">
+<span class="badge bg-secondary">
+      {{ post.category.name }}
+</span>
+<br />
+<small>Créé le : {{ post.createdDate | date: 'medium' }}</small>
+</div>
+ 
+  <div class="mt-4">
+<a [routerLink]="['/']" class="btn btn-outline-primary">
+      ← Retour à la liste
+</a>
+</div>
+</div>
+ 
+<div *ngIf="!post">
+<p>Chargement du post...</p>
+</div>
